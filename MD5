@@ -1,5 +1,6 @@
-597fa3c54b7b0e4ab548b0317959ac2c *DESCRIPTION
+553cfbb239e6026486f59aa26c85acee *DESCRIPTION
 fdcdbeb327eb600f3195ffab9a42b65f *NAMESPACE
+3f0012bed29bbb2a10b837832a6207d7 *NEWS
 bd0873161d694808ebc61b0496b5487d *R/RcppExports.R
 42c10fc1cfb18fea176aef95bc77749d *R/acum.R
 d825e04d1d18fd3e1771de9e0c30baed *R/add.marker.R
@@ -107,7 +108,7 @@ e2c99f1e6a81f332f1d3ab1686839441 *man/set.map.fun.Rd
 648f777658723615c2bde34229a7b62a *src/GET_RF.cpp
 e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars
 e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars.win
-00cdf56b4d9671c53037c8e7635f6026 *src/READ_OUTCROSS.cpp
+0897a5c0bc51f5b735deacfbcdd1c5ae *src/READ_OUTCROSS.cpp
 95b7849db861afe6bfd3da29fd7ccad5 *src/RcppExports.cpp
 e3d583acc286c8747d54abc39d23c584 *src/find_bins.cpp
 6b8ae76a71ec3ce9cc0537f4168ed194 *src/find_bins.h
@@ -116,7 +117,7 @@ c0087c3533bf6a9414253079925e25f8 *src/hmm_out.h
 dddfb4659cd326e980ec1ba62275298b *src/out_est.cpp
 26dfdfe0e30d748635828a40d13daf92 *src/out_est.h
 a8b3c5acf12d4652006b5e433fc9e79c *src/progressBar.h
-88cc4337b573df9b4af907fd0cdd2306 *src/record.cpp
+fb457dd860e9d386adea113bcdd09182 *src/record.cpp
 15ae3fae9a420d0ad9e71bbe5958b884 *src/registration.c
 e260800022f3f79bb7aa360c6aae674f *src/twopts_out.cpp
 13acd6c72dd8b5c5959e130babc88632 *src/twopts_out.h
