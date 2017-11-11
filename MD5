@@ -1,7 +1,7 @@
-553cfbb239e6026486f59aa26c85acee *DESCRIPTION
+98f286f94ad8fede6f07339397be6dd6 *DESCRIPTION
 fdcdbeb327eb600f3195ffab9a42b65f *NAMESPACE
 3f0012bed29bbb2a10b837832a6207d7 *NEWS
-bd0873161d694808ebc61b0496b5487d *R/RcppExports.R
+56cdbb1ce2d876cbaef970a4a90e1952 *R/RcppExports.R
 42c10fc1cfb18fea176aef95bc77749d *R/acum.R
 d825e04d1d18fd3e1771de9e0c30baed *R/add.marker.R
 007fd44209a5077416abcf3bbffcfcdc *R/adjust.rils.R
@@ -46,12 +46,12 @@ d7043f4ec969368bc26decd0035f72e0 *R/seeded.map.R
 de9dc6a1786c9548f2d2ef68fc21f8bf *R/ug.R
 524c7c9c030f0a2909af62be8865c7f0 *R/write.map.R
 37d4dfc8cfd820b3fa4a9bd7689a3897 *R/zzz.R
-665bf169b164d24025da32c985cfd141 *README.md
-ec4bfd364c156a15fea1eb3c581ff2c5 *build/vignette.rds
+8ac952020ccce10cdebdd8d3777f498b *README.md
+f40edf974d2c2019e6e0ee5c9fb9e9ac *build/vignette.rds
 4b46045ed41346220819ab47875fa4f1 *data/example.out.RData
 1786148f322f9574efb30b461d352b06 *inst/doc/BatchMap.R
-2b7bb5f22df03be5d669a2bbee22b9f6 *inst/doc/BatchMap.Rmd
-5a79b24b0498d9af51fdbf993caabc72 *inst/doc/BatchMap.html
+133d6c670402bb136c3651a4684c3a15 *inst/doc/BatchMap.Rmd
+7b9a550b685331b827abad8d1ed9d7b2 *inst/doc/BatchMap.html
 98b23e0ce3a5a3c4e8b6dd285cdda278 *inst/example/cached.results.RData
 693b36b68cf8108df1b161b26d0c1fef *inst/example/example.out.txt
 402f7741d3391f1452d705992c0c29c7 *inst/example/sim7.5k.txt.gz
@@ -64,7 +64,7 @@ cafdc78447fcfd8754e360aa78a59dd3 *man/compare.Rd
 429ba8f690b3a6bc573a88bd1ed3b1a3 *man/draw.map.Rd
 17764da404709390cd726af639f58461 *man/drop.marker.Rd
 9bcfd02e5bf9b010940a0c138832f639 *man/est_map_hmm_out.Rd
-d960e9f6eb311f50396e21cbc5b44edc *man/example.out.Rd
+cf344e9ba7d0edf0ec9d4ec0cb3a4802 *man/example.out.Rd
 00658cf2b67b91451e6b9c85d52731a4 *man/find.bins.Rd
 dad4422a185cd3ccf2e727d6e7ee1f94 *man/group.Rd
 59fd5af95fe49d93ab5ae763161d91e7 *man/make.seq.Rd
@@ -72,7 +72,7 @@ dad4422a185cd3ccf2e727d6e7ee1f94 *man/group.Rd
 5318f23fb8ed450762031a4a6a8badfd *man/map.overlapping.batches.Rd
 a25c5f7ac72976bc09a9e6606abef6e0 *man/map_func.Rd
 d4e34e9272164eaa9401ec23040a2d9a *man/marker.type.Rd
-6e85545a303706fa47009af734e6b098 *man/onemap-internal.Rd
+f053f826f5ed384fb3a999a343df342a *man/onemap-internal.Rd
 643d4345866df7cfd9014f391901015c *man/order.seq.Rd
 c2bfc4c4c93d48c5495763ee13b2ea19 *man/pick.batch.sizes.Rd
 6b267f1e2cf8f4971d216f6b154397de *man/plot.by.segreg.type.Rd
@@ -109,7 +109,7 @@ e2c99f1e6a81f332f1d3ab1686839441 *man/set.map.fun.Rd
 e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars
 e3d3cb360fbfdb3c6974e14eb5f09870 *src/Makevars.win
 0897a5c0bc51f5b735deacfbcdd1c5ae *src/READ_OUTCROSS.cpp
-95b7849db861afe6bfd3da29fd7ccad5 *src/RcppExports.cpp
+0a962cf796c9598830f4585028261571 *src/RcppExports.cpp
 e3d583acc286c8747d54abc39d23c584 *src/find_bins.cpp
 6b8ae76a71ec3ce9cc0537f4168ed194 *src/find_bins.h
 4f6deab96c5a006c4ff2e78dd07bf18e *src/hmm_out.cpp
@@ -118,9 +118,9 @@ dddfb4659cd326e980ec1ba62275298b *src/out_est.cpp
 26dfdfe0e30d748635828a40d13daf92 *src/out_est.h
 a8b3c5acf12d4652006b5e433fc9e79c *src/progressBar.h
 fb457dd860e9d386adea113bcdd09182 *src/record.cpp
-15ae3fae9a420d0ad9e71bbe5958b884 *src/registration.c
 e260800022f3f79bb7aa360c6aae674f *src/twopts_out.cpp
 13acd6c72dd8b5c5959e130babc88632 *src/twopts_out.h
 16bd3afe7ddcf327334e3e77daed4bb2 *src/utils.cpp
 c03c87974cc7937cbb8161598b124313 *src/utils.h
-2b7bb5f22df03be5d669a2bbee22b9f6 *vignettes/BatchMap.Rmd
+133d6c670402bb136c3651a4684c3a15 *vignettes/BatchMap.Rmd
+7c0b24b8215164d58d5c399e38600b01 *vignettes/BatchMap.md

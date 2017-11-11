@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Bastian Schiffthaler and Carolina Bernhardsson" />
 
-<meta name="date" content="2017-03-09" />
+<meta name="date" content="2017-10-30" />
 
 <title>BatchMap algorithm for the creation of high density linkage maps in outcrossing species</title>
 
@@ -70,13 +70,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">BatchMap algorithm for the creation of high density linkage maps in outcrossing species</h1>
 <h4 class="author"><em>Bastian Schiffthaler and Carolina Bernhardsson</em></h4>
-<h4 class="date"><em>2017-03-09</em></h4>
+<h4 class="date"><em>2017-10-30</em></h4>
 
 
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>In general, the reader is encouraged to go through the excellent documentation of the original OneMap package before going through this vignette. An up-to-date version can be found <a href="https://github.com/augusto-garcia/onemap/raw/master/inst/doc/Tutorial_Onemap_reduced_version.pdf">here</a>. The majority of the pipeline still works the same or very similar to the implementations in OneMap (also internally). For those already familiar with the original or those looking for a quick summary, feel free to go on.</p>
+<p>In general, the reader is encouraged to go through the excellent documentation of the original OneMap package before going through this vignette. An up-to-date version can be found <a href="https://github.com/augusto-garcia/onemap/#tutorials">here</a>. The majority of the pipeline still works the same or very similar to the implementations in OneMap (also internally). For those already familiar with the original or those looking for a quick summary, feel free to go on.</p>
 <p>NOTE: BatchMap has been written specifically for use in outcrossing species. All OneMap functionality pertaining to back-crosses, f2, ril etc. has been removed for the sake of easier code maintenance. If your use case is not an outcrossing F1 population, turn back now (and use OneMap instead).</p>
 </div>
 <div id="reading-data-into-r" class="section level2">
@@ -179,7 +179,7 @@ outcross_clean</code></pre></div>
 <h2>Splitting the data into pseudo testcrosses</h2>
 <p>In order to calculate a map for each parent and then join them afterwards, we provide a function <code>pseudo.testcross.split()</code>, that creates a list of testcrosses. Each list element corresponds to a linkage group and a sequence for markers of type “D1.10” and one for markers of type “D2.15”. Both include all markers of other types.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">testcrosses &lt;-<span class="st"> </span><span class="kw">pseudo.testcross.split</span>(linkage_groups)
-testcrosses$LG1.d2<span class="fl">.15</span></code></pre></div>
+testcrosses<span class="op">$</span>LG1.d2<span class="fl">.15</span></code></pre></div>
 <pre><code>## 
 ## Number of markers: 273
 ## Markers in the sequence:
@@ -215,8 +215,8 @@ ordered_sequences &lt;-<span class="st"> </span><span class="kw">lapply</span>(t
 <div id="creating-the-batchmaps" class="section level2">
 <h2>Creating the BatchMaps</h2>
 <p>With the sequences neatly ordered, we can now go ahead with creating BatchMaps. For this, we define an overall batch size as well as an overlap size and let the function <code>pick.batch.sizes()</code> decide on the final size in order to split batches evenly. The <code>around</code> argument to the function defines how much smaller or larger the batch size is allowed to be in order to create evenly sized batches. We will work with linkage group 1 from here on to save time:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span>ordered_sequences$LG1.d1<span class="fl">.10</span>
-LG1_d2<span class="fl">.15</span> &lt;-<span class="st"> </span>ordered_sequences$LG1.d2<span class="fl">.15</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span>ordered_sequences<span class="op">$</span>LG1.d1<span class="fl">.10</span>
+LG1_d2<span class="fl">.15</span> &lt;-<span class="st"> </span>ordered_sequences<span class="op">$</span>LG1.d2<span class="fl">.15</span>
 batch_size_LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">pick.batch.sizes</span>(LG1_d1<span class="fl">.10</span>, 
                                          <span class="dt">size =</span> <span class="dv">50</span>, 
                                          <span class="dt">overlap =</span> <span class="dv">30</span>, 
@@ -234,7 +234,7 @@ map_LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span><span class=
                                          <span class="dt">phase.cores =</span> <span class="dv">4</span>,
                                          <span class="dt">overlap =</span> <span class="dv">30</span>)</code></pre></div>
 <p>The result of <code>map.overlapping.batches()</code> has a data member <code>$Map</code>, which corresponds to the final map:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">map_LG1_d1<span class="fl">.10</span>$Map</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">map_LG1_d1<span class="fl">.10</span><span class="op">$</span>Map</code></pre></div>
 <pre><code>## 
 ## Printing map:
 ## 
@@ -542,19 +542,19 @@ rip_LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span><span class=
                                          <span class="dt">min.tries =</span> <span class="dv">1</span>,
                                          <span class="dt">ws =</span> <span class="dv">4</span>)</code></pre></div>
 <p>We can evaluate the number of mistakes in the order, because the true order is known in the simulated dataset:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">err_rate &lt;-<span class="st"> </span>function(seq)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">err_rate &lt;-<span class="st"> </span><span class="cf">function</span>(seq)
 {
   <span class="co"># Get the marker position</span>
-  s_num &lt;-<span class="st"> </span>seq$seq.num
+  s_num &lt;-<span class="st"> </span>seq<span class="op">$</span>seq.num
   <span class="co"># If the sequence is reverse, turn it around</span>
-  if(<span class="kw">cor</span>(s_num, <span class="dv">1</span>:<span class="kw">length</span>(s_num)) &lt;<span class="st"> </span><span class="dv">0</span>)
+  <span class="cf">if</span>(<span class="kw">cor</span>(s_num, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s_num)) <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)
     s_num &lt;-<span class="st"> </span><span class="kw">rev</span>(s_num)
   <span class="co"># Get the number of misorders and divide by the total length</span>
-  <span class="kw">sum</span>(<span class="kw">order</span>(s_num) -<span class="st"> </span><span class="dv">1</span>:<span class="kw">length</span>(s_num) !=<span class="st"> </span><span class="dv">0</span>) /<span class="st"> </span><span class="kw">length</span>(s_num)
+  <span class="kw">sum</span>(<span class="kw">order</span>(s_num) <span class="op">-</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s_num) <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(s_num)
 }
 
-<span class="kw">c</span>(<span class="st">&quot;BatchMap&quot;</span> =<span class="st"> </span><span class="kw">err_rate</span>(map_LG1_d1<span class="fl">.10</span>$Map),
-  <span class="st">&quot;RippleBatchMap&quot;</span> =<span class="st"> </span><span class="kw">err_rate</span>(rip_LG1_d1<span class="fl">.10</span>$Map))</code></pre></div>
+<span class="kw">c</span>(<span class="st">&quot;BatchMap&quot;</span> =<span class="st"> </span><span class="kw">err_rate</span>(map_LG1_d1<span class="fl">.10</span><span class="op">$</span>Map),
+  <span class="st">&quot;RippleBatchMap&quot;</span> =<span class="st"> </span><span class="kw">err_rate</span>(rip_LG1_d1<span class="fl">.10</span><span class="op">$</span>Map))</code></pre></div>
 <pre><code>##       BatchMap RippleBatchMap 
 ##      0.4765343      0.3898917</code></pre>
 </div>
@@ -566,7 +566,7 @@ rip_LG1_d1<span class="fl">.10</span> &lt;-<span class="st"> </span><span class=
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
